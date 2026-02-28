@@ -1,39 +1,80 @@
-# Design System: Dashboard Temp Monitor
-**Project ID:** 4792373877598741482
+# 🏛️ Thermocore Enterprise Design System
 
-## 1. Visual Theme & Atmosphere
-The design system for the **Dashboard Temp Monitor** is **High-Tech, Industrial, and Modern**. It features a "Dark Mode" aesthetic that emphasizes critical data through high-contrast colors and subtle glows. The overall vibe is **Utilitarian yet Premium**, suitable for technical monitoring applications. It uses a **Dense** layout style that prioritizes information density while maintaining readability through generous spacing between distinct functional sections.
+This document outlines the visual language and core UI components of the **Thermocore Control Dashboard**, an industrial-grade interface optimized for safety, precision, and high-performance monitoring.
 
-## 2. Color Palette & Roles
-*   **Deep Space Navy (#111722 / #101622):** The primary background color, providing a professional dark foundation for the UI.
-*   **Electric Primary Blue (#2b6cee):** Used for primary actions, active indicators, and branding elements.
-*   **Vibrant Amber (#f59e0b):** Specifically reserved for the **Heater** status and active heating states, conveying heat and attention.
-*   **Cyan Pulse (#06b6d4):** Used for **Pump** status and secondary fluid-related active states.
-*   **Critical Red (#ef4444):** Exclusively for **Alarms**, Emergency Stops, and high-priority warnings.
-*   **Success Green (#22c55e):** Used for positive trends, health status indicators, and "Connected" states.
-*   **Slate Gray Hierarchy (#94a3b8):** Used for secondary text, units, and structural borders.
+---
 
-## 3. Typography Rules
-*   **Font Family:** Uses **Space Grotesk** as the primary font for both display (headers) and body text, giving it a technical, slightly futuristic feel.
-*   **Headings:** Thick, bold weights (700) for large temperature readouts and section titles.
-*   **Body:** Medium weights (400-500) for labels and status descriptions.
-*   **Monospace:** Utilized for numerical values and uptime timers to ensure vertical alignment and a "data-driven" aesthetic.
+## 🎨 Professional Color Palette
 
-## 4. Component Stylings
-*   **Buttons (Controls):** 
-    *   **Shape:** Large, generously rounded rectangles (`rounded-2xl`).
-    *   **Behavior:** Features a subtle scale-down on click (`active:scale-95`) and hover glows (`shadow-glow-amber`).
-    *   **Icons:** Large, filled Material Symbols centered within the button.
-*   **Cards/Containers:** 
-    *   **Background:** Slightly lighter surface colors (`bg-surface-dark`) than the main background.
-    *   **Borders:** Thin, subtle borders (`border-surface-border`) to define structural boundaries.
-    *   **Shadows:** Features an "Inner Glow" (`inset 0 2px 4px 0 rgba(255, 255, 255, 0.05)`) to create depth.
-*   **Inputs/Forms:** 
-    *   **Range Sliders:** Custom accent colors matching the parameter type (Kp: Blue, Ki: Purple, Kd: Teal).
-    *   **Toggles:** Custom labels that change background color and border when the hidden checkbox is checked.
+### **Primary Tone: Industrial Blue**
+`#2b6cee` - Used for primary actions, active status indicators, and critical telemetry signals.
 
-## 5. Layout Principles
-*   **Mobile-First:** Optimized for a narrow, max-width container (simulating a mobile device).
-*   **Vertical Hierarchy:** Critical monitoring at the top, trends in the middle, and interactive controls at the bottom.
-*   **Bottom Navigation:** A fixed navigation bar at the bottom for easy thumb access, featuring icon-label pairs.
-*   **Whitespace:** Uses consistent padding (`px-6`, `p-4`) to prevent the dense information from feeling cluttered.
+### **Functional Surface: Light Mode**
+- **Background**: `#fefefe`
+- **Surface**: `#ffffff`
+- **Borders**: `#e2e8f0`
+- **Text (Strong)**: `#1e293b`
+- **Text (Muted)**: `#64748b`
+
+### **Functional Surface: Dark Mode**
+- **Background**: `#0f172a`
+- **Surface**: `#1e293b`
+- **Borders**: `#334155`
+- **Text (Strong)**: `#f8fafc`
+- **Text (Muted)**: `#94a3b8`
+
+### **Semantic Status**
+- **Critical (Alert)**: `#ef4444`
+- **Operating (Success)**: `#22c55e`
+- **Warning (Amber)**: `#f59e0b`
+- **Information (Cyan)**: `#06b6d4`
+
+---
+
+## 📐 Layout & Spacing
+
+### **Rhythm Scale**
+We use a **4px base grid** for consistent spacing throughout the interface.
+- **Section Padding**: `24px (p-6)` to `32px (p-8)`
+- **Element Spacing**: `16px (gap-4)` to `20px (gap-5)`
+- **Inter-Item Gap**: `12px (gap-3)`
+
+### **Geometry (Border Radius)**
+- **Cards**: `32px (rounded-3xl)` for a modern, fluid feel.
+- **Main Hero Section**: `40px (rounded-[2.5rem])` for high-impact metrics.
+- **Interactive Buttons**: `16px (rounded-2xl)` to ensure accessibility and touch targets.
+
+---
+
+## 🔡 Typography Architecture
+
+### **Headline Face: Space Grotesk**
+Used for primary metrics, headers, and navigation titles. High geometric precision for technical contexts.
+- **Base Weight**: `900 (Black)`
+- **Tracking**: `-0.05em (Tight)` for large headers.
+
+### **Body Face: Inter**
+Optimized for high readability in dense data sets, logs, and technical descriptions.
+- **Standard Weight**: `500 (Medium)`
+- **Information Emphasis**: `700 (Bold)` or `800 (Extra Bold)` for status labels.
+
+---
+
+## 🕹️ Interactive Components
+
+### **Status-Responsive Controls**
+- **Active State**: Primary/Accent color fill with subtle shadow glow.
+- **Passive State**: Desaturated surface colors with clear "Idle" indicators.
+
+### **Dynamic Charts**
+- **Graph Style**: Step-indexed area charts with low-opacity gradients.
+- **Interaction**: Clean hover tooltips with rounded backgrounds.
+
+---
+
+## 🌗 Theme Philosophy
+The dashboard implements a **True Dark** and **High-Contrast Light** mode. Seamless transitions (300ms) ensure user comfort in switching between bright environments and dimly lit control rooms.
+
+---
+
+*Verified Industrial Design Integrity. © 2026.*

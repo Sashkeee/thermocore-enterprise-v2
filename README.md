@@ -1,80 +1,77 @@
-# 🌡️ Thermocore Enterprise V2
+# 🏛️ Thermocore Enterprise Dashboard V3
 
-[![Enterprise Edition](https://img.shields.io/badge/Edition-Enterprise-blue?style=for-the-badge)](https://github.com/)
-[![React 19](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
-[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![License MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Platform: Web](https://img.shields.io/badge/Platform-Web-blue?style=for-the-badge)](https://github.com/)
+[![React 19](https://img.shields.io/badge/Framework-React_19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+[![Tailwind CSS v4](https://img.shields.io/badge/CSS-Tailwind_v4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Status: Production Ready](https://img.shields.io/badge/Status-Production_Ready-green?style=for-the-badge)](https://github.com/)
 
-**Thermocore Enterprise V2** is a professional-grade industrial temperature control monitoring and PID adjustment dashboard. Designed for high-stakes environments where precision and reliability are paramount.
-
----
-
-## ✨ Key Features
-
-### 📡 Real-time Monitoring
-- **Precision Tracking**: Sub-decimal temperature monitoring with trend indicators.
-- **Micro-Animations**: Pulse-based status badges for active Alarms and Heater units.
-- **Live Graphs**: Dynamic chart engine powered by `Recharts` for sub-second trend analysis.
-
-### 🎛️ System Adjustment
-- **PID Control Suite**: Granular adjustment for Proportional (Kp), Integral (Ki), and Derivative (Kd) coefficients.
-- **Safety First**: Integrated Emergency Kill-Switch with visual feedback for immediate manual override.
-
-### 💎 High-End UI/UX
-- **Dark Mode Architecture**: Eye-friendly theme for control room environments.
-- **Tactile Transitions**: Smooth, physics-based UI transitions using `Framer Motion`.
-- **Systematic Design**: Built on a semantic design system documented in `DESIGN.md`.
+**Thermocore Enterprise** is a sophisticated, industrial-grade monitoring solution designed for thermal control systems. It provides real-time telemetry, advanced PID tuning capabilities, and persistent event logging in a high-fidelity interface optimized for control room operators.
 
 ---
 
-## 🛠️ Technology Stack
+## 📱 Interface Preview
 
-| Component | Technology | Rationale |
-| :--- | :--- | :--- |
-| **Core** | React 19 (TypeScript) | Type-safety & Modern Component Model |
-| **Styling** | Tailwind CSS v4 | Semantic tokens & Utility-first efficiency |
-| **Animations** | Framer Motion | Physics-based interactive feedback |
-| **Data Viz** | Recharts | Low-latency SVG chart engine |
-| **Icons** | Lucide React | Consistent, high-fidelity iconography |
+| Dashboard (Dark) | Dashboard (Light) |
+| :---: | :---: |
+| ![Dashboard Dark](./docs/assets/dashboard_dark.png) | ![Dashboard Light](./docs/assets/dashboard_light.png) |
+
+| System Tuning | Event Reports |
+| :---: | :---: |
+| ![PID Tuning](./docs/assets/tuning.png) | ![System Logs](./docs/assets/reports.png) |
 
 ---
 
-## 📂 Project Structure
+## 🚀 Core Capabilities
+
+### 🛡️ Industrial Stability
+- **Real-time Telemetry**: Sub-second temperature tracking with step-chart visualization for stability analysis.
+- **Fail-safe Design**: Integrated hardware kill-switch and system health reporting.
+- **Node Monitoring**: Dynamic status indicators for active thermal relays and flow pumps.
+
+### ⚙️ Precision Engineering
+- **PID Control Interface**: Granular adjustment of Kp, Ki, and Kd parameters with unified "Commit" workflows.
+- **Adaptive UI**: Seamless transition between high-contrast Dark and Light themes for varied environment lighting.
+- **Persistent Logging**: Structured event stream with severity-coded records for audit trails.
+
+### 💎 Design Excellence
+- **Component Architecture**: Built on a modular, semantic design system for infinite scalability.
+- **Premium UX**: Fluid, physics-inspired transitions and micro-interactions powered by Framer Motion.
+- **Enterprise Aesthetics**: Clean typography (Inter & Space Grotesk) and high-density information display.
+
+---
+
+## 🛠️ Technical Stack
+
+- **Frontend**: React 19, TypeScript
+- **Styling**: Tailwind CSS v4 (Variables-first architecture)
+- **Charts**: Recharts (SVG-based reactive visualization)
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Packaging**: Vite 7 (Latest)
+
+---
+
+## 📦 Installation & Setup
 
 ```bash
-src/
-├── components/   # Modular UI elements (Monitor, Adjust, Nav)
-├── data/         # MockData & Initial system states
-├── hooks/        # Future implementation for WebSocket hooks
-└── utils/        # Internal formatting & CN utility
+# Clone the repository
+git clone https://github.com/Sashkeee/thermocore-enterprise-v2.git
+
+# Install dependencies
+npm install
+
+# Start production-grade dev server
+npm run dev
+
+# Compile for enterprise deployment
+npm run build
 ```
 
 ---
 
-## 🚀 Quick Start
-
-1. **Install Dependencies**
-   ```bash
-   npm install
-   ```
-2. **Launch Dev Server**
-   ```bash
-   npm run dev
-   ```
-3. **Build for Production**
-   ```bash
-   npm run build
-   ```
+## 📄 Design Documentation
+Refer to [DESIGN.md](./DESIGN.md) for detailed specifications on color palettes, spacing rhythm, and component geometry used in the Thermocore ecosystem.
 
 ---
 
-## 📑 Design Philosophy
-
-This project follows the **Semantic Design System** (see [DESIGN.md](./DESIGN.md)). 
-- **Space Grotesk** for readability in technical contexts.
-- **Subtle Glows** for high-priority active states.
-- **Responsive Geometry**: Subtly rounded corners (`2xl`) for a premium modern feel.
-
----
-
-*© 2026 Thermocore Systems Interface. All rights reserved.*
+*Powered by Thermocore Systems Engine. © 2026. All rights reserved.*

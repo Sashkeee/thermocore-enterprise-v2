@@ -1,29 +1,59 @@
 @import "tailwindcss";
 
 @theme {
+  /* Переменный цвета (v4) */
   --color-primary: #2b6cee;
-  --color-background-light: #f6f6f8;
-  --color-background-dark: #111722;
-  --color-surface-dark: #192233;
-  --color-surface-border: #232f48;
-
+  --color-accent: #f48c25;
+  --color-success: #22c55e;
+  --color-danger: #ef4444;
   --font-display: "Space Grotesk", sans-serif;
-  --font-body: "Noto Sans", sans-serif;
-
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
-  --radius-2xl: 1rem;
-  --radius-3xl: 1.5rem;
-
-  --shadow-glow-amber: 0 0 20px -5px rgba(245, 158, 11, 0.5);
-  --shadow-glow-cyan: 0 0 20px -5px rgba(6, 182, 212, 0.5);
-  --shadow-inner-glow: inset 0 2px 4px 0 rgba(255, 255, 255, 0.05);
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 @layer base {
-  body {
-    @apply bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-body;
+  :root {
+    --app-bg: #f8fafc;
+    --app-surface: #ffffff;
+    --app-border: #e2e8f0;
+    --app-text: #0f172a;
+    --app-muted: #64748b;
   }
+
+  .dark {
+    --app-bg: #020617;
+    --app-surface: #0f172a;
+    --app-border: #1e293b;
+    --app-text: #f8fafc;
+    --app-muted: #64748b;
+  }
+
+  body {
+    background-color: var(--app-bg);
+    color: var(--app-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    @apply antialiased font-body;
+  }
+}
+
+/* Утилиты на базе переменных для удобства переключения в TSX */
+@utility bg-app-bg {
+  background-color: var(--app-bg);
+}
+
+@utility bg-app-surface {
+  background-color: var(--app-surface);
+}
+
+@utility border-app-border {
+  border-color: var(--app-border);
+}
+
+@utility text-app-main {
+  color: var(--app-text);
+}
+
+@utility text-app-muted {
+  color: var(--app-muted);
 }
 
 @utility no-scrollbar {
