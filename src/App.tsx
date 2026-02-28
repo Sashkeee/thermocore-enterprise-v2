@@ -1,14 +1,14 @@
 import {
-  LayoutDashboard, FileText, Settings2, Cpu,
-  Flame, Droplets, TriangleAlert, TrendingUp,
+  LayoutDashboard, FileText, Cpu,
+  Flame, Droplets, TriangleAlert,
   MoveLeft, Info, Power, Moon, Sun,
-  RefreshCcw, Settings, ShieldCheck, Gauge, Share2, MoreHorizontal
+  Settings, ShieldCheck, Gauge, MoreHorizontal
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, ResponsiveContainer } from 'recharts';
 import { mockData, initialChartData } from './data/mockData';
 import type { LogEntry } from './data/mockData';
 
@@ -160,7 +160,7 @@ const MonitorScreen = ({ controls, setControls }: { controls: ControlState; setC
       <section className="bg-app-surface border border-app-border rounded-3xl p-6 shadow-sm">
         <div className="flex items-center justify-between mb-6 text-app-main">
           <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-app-muted">Response Trend</h3>
-          <MoreHorizontal className="w-4 h-4" />
+          <MoreHorizontal className="w-4 h-4 text-app-muted" />
         </div>
         <div className="h-40 w-full ml-[-15px]">
           <ResponsiveContainer width="110%" height="100%">
@@ -248,7 +248,7 @@ const SetupScreen = () => (
         </div>
       ))}
     </div>
-    <motion.button whileTap={{ scale: 0.98 }} className="w-full h-14 bg-primary text-white rounded-2xl font-black uppercase text-xs tracking-[0.2em] shadow-xl">Apply Parameters</motion.button>
+    <motion.button whileTap={{ scale: 0.98 }} className="w-full h-14 bg-primary text-white rounded-2xl font-black uppercase text-xs tracking-[0.2em] shadow-xl shadow-primary/20">Apply Parameters</motion.button>
   </motion.div>
 );
 
@@ -260,7 +260,7 @@ const ConfigScreen = () => (
         <span className="text-sm font-bold text-app-main">Cloud Encryption</span>
         <ShieldCheck className="w-5 h-5 text-emerald-500" />
       </div>
-      <div className="p-6 flex items-center justify-between text-red-500 cursor-pointer">
+      <div className="p-6 flex items-center justify-between text-red-500 cursor-pointer hover:text-red-600 transition-colors">
         <span className="text-sm font-bold">Safe Shutdown</span>
         <Power className="w-5 h-5" />
       </div>
@@ -293,19 +293,26 @@ export default function App() {
   };
 
   useEffect(() => {
-    // Initial sync
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, []);
+  }, [theme]);
+
+  const getTitle = () => {
+    if (screen === 'monitor') return 'Monitor';
+    if (screen === 'setup') return 'Tuning';
+    if (screen === 'logs') return 'Reports';
+    if (screen === 'config') return 'System';
+    return screen;
+  };
 
   return (
     <div className="min-h-screen transition-colors duration-300">
       <div className="relative flex min-h-screen w-full flex-col overflow-hidden max-w-md mx-auto bg-app-bg border-x border-app-border shadow-2xl">
         <Header
-          title={screen === 'monitor' ? 'Monitor' : screen}
+          title={getTitle()}
           subtitle="Enterprise Guard v3"
           showBack={screen !== 'monitor'}
           onBack={() => setScreen('monitor')}
